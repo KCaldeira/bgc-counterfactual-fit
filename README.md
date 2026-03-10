@@ -3,7 +3,7 @@
 Find a correction function h(T) such that:
 
 ```
-pct_growth_gpp_bgc + h(tas_bgc) ≈ pct_growth_gpp + h(tas)
+pct_growth_gpp_bgc - h(tas_bgc) + h(tas) ≈ pct_growth_gpp
 ```
 
 where `_bgc` variables come from `*hist-bgc.csv` files and non-`_bgc` variables come from `*historical.csv` files.
@@ -11,7 +11,7 @@ where `_bgc` variables come from `*hist-bgc.csv` files and non-`_bgc` variables 
 Equivalently, we minimize the residual:
 
 ```
-[pct_growth_gpp - pct_growth_gpp_bgc] - [h(tas_bgc) - h(tas)]
+[pct_growth_gpp - pct_growth_gpp_bgc] - [h(tas) - h(tas_bgc)]
 ```
 
 over all regions and years, fitting the parameters of h(T).
